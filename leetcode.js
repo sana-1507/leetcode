@@ -640,3 +640,19 @@ function reverseString(s) {
   }
   return arr.join("")
 }
+
+
+//Best time of buying and selling a stock
+//[7,1,5,4,10,9,8,6]
+function maxProfit(prices) {
+let minPrice = prices[0];
+let maxProfit = 0;
+for(let i = 1; i < prices.length;i++) {
+  minPrice = Math.min(minPrice, prices[i]);
+  let profit = prices[i] - minPrice;
+
+  maxProfit = Math.max(maxProfit, profit)
+}
+return maxProfit;
+}
+console.log(maxProfit([7,1,5,4,10,9,8,6]))

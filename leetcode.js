@@ -656,3 +656,30 @@ for(let i = 1; i < prices.length;i++) {
 return maxProfit;
 }
 console.log(maxProfit([7,1,5,4,10,9,8,6]))
+
+//Given a 1-based indexing array arr[] of non-negative integers 
+// and an integer sum. Find the left and right indexes(1-based indexing)
+//  of that subarray that is equal to the given sum. In case of multiple 
+// subarrays, find the subarray indexes which come first on moving from
+//  left to right. If no such subarray exists return an array consisting
+//  of element -1. Examples: Input: arr[] = [15, 2, 4, 8, 9, 5, 10, 23], 
+// target = 23 Output: [2, 5] Explanation: Sum of subarray arr[2...5] is 
+// 2 + 4 + 8 + 9 = 23.
+
+
+function subarraySum(arr, target) {
+  let left = 0;
+  let currentSum = 0;
+  for(let right = 0; right < arr.length;right++) {
+    currentSum+= arr[right];
+    while(currentSum > target) {
+      currentSum -= arr[left];
+      left++;
+    }
+    if(currentSum === target) {
+      return [left+1, right+1];
+    }
+  }
+}
+console.log(subarraySum([15, 2, 4, 8, 9, 5, 10, 23], 23))
+

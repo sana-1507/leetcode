@@ -699,3 +699,17 @@ function countFrequencies(arr) {
 }
 console.log(countFrequencies([1,2,2,3,3,3,4]))
 
+
+//Merge Two Sorted Arrays Without Extra Space
+function mergeSortedArrays(arr1, arr2) {
+  let size1 = arr1.length;
+  let size2 = arr2.length;
+  let combinedArr = [...arr1, ...arr2];
+combinedArr.sort((a,b)=> a-b);
+arr1 = combinedArr.slice(0,size1);
+arr2 = combinedArr.slice(size1);
+return [arr1, arr2];
+
+}
+console.log(mergeSortedArrays([0,1],[2,3]))
+

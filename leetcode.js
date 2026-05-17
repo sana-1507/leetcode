@@ -683,3 +683,19 @@ function subarraySum(arr, target) {
 }
 console.log(subarraySum([15, 2, 4, 8, 9, 5, 10, 23], 23))
 
+//Counting frequencies of array elements
+function countFrequencies(arr) { 
+  let map = {};
+  for(let i = 0 ; i < arr.length;i++) {
+     console.log(map)
+    if(map[arr[i]]) {
+      console.log(map)
+      map[arr[i]]++;
+    } else{
+      map[arr[i]] = 1;
+    }
+  }
+  return map;
+}
+console.log(countFrequencies([1,2,2,3,3,3,4]))
+
